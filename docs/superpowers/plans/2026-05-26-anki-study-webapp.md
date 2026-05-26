@@ -80,9 +80,9 @@ Expected: `lib/main.dart`, `web/`, `pubspec.yaml` 생성. 기존 `docs/`, `.git`
 
 Run:
 ```bash
-flutter pub add archive sqlite3 sembast sembast_web flutter_widget_from_html file_picker provider uuid
-flutter pub add --dev flutter_test
+flutter pub add archive sqlite3 sembast sembast_web flutter_widget_from_html file_picker provider uuid typed_data
 ```
+(`typed_data`는 웹 sqlite VFS에 바이트를 주입할 때 쓰는 `Uint8Buffer` 때문에 필요. `flutter_test`는 flutter create가 이미 dev_dependencies에 추가함.)
 Expected: `pubspec.yaml`의 dependencies에 위 패키지들이 추가됨.
 
 - [ ] **Step 4: 웹용 sqlite3.wasm 배치**
@@ -1740,39 +1740,37 @@ abstract class CollectionOpener {
 
 - [ ] **Step 2: 웹 구현 작성**
 
-`lib/apkg/collection_opener_web.dart`:
+`lib/apkg/collection_opener_web.dart` (sqlite3 3.3.1에서 검증된 실제 API):
 ```dart
 import 'dart:typed_data';
-import 'package:sqlite3/common.dart';
 import 'package:sqlite3/wasm.dart';
+import 'package:typed_data/typed_buffers.dart';
 import 'collection_opener.dart';
 
 /// 웹 전용: sqlite3.wasm을 로드하고 인메모리 VFS에 바이트를 써서 연다.
-///
-/// 주의: InMemoryFileSystem에 바이트를 주입하는 정확한 호출은 설치된
-/// `sqlite3` 패키지 버전 문서를 따른다. (pub.dev/packages/sqlite3 → web)
+/// (sqlite3 3.3.1 API: registerVirtualFileSystem + InMemoryFileSystem.fileData)
 class WebCollectionOpener implements CollectionOpener {
   WasmSqlite3? _sqlite3;
+  bool _vfsRegistered = false;
+  final InMemoryFileSystem _fs = InMemoryFileSystem();
+
+  static const _path = '/collection.db';
 
   @override
   Future<CommonDatabase> open(Uint8List dbBytes) async {
-    final fs = InMemoryFileSystem();
-    _sqlite3 ??= await WasmSqlite3.loadFromUrl(
-      Uri.parse('sqlite3.wasm'),
-      environment: SqliteEnvironment(fileSystem: fs),
-    );
-    const path = '/collection.db';
-    // 인메모리 FS에 DB 바이트 주입 후 열기.
-    // (메서드명이 버전에 따라 다르면 문서의 'write bytes to file' 예시로 교체)
-    fs.xOpenFile(Sqlite3Filename(path), SqlFlag.SQLITE_OPEN_CREATE | SqlFlag.SQLITE_OPEN_READWRITE);
-    fs.createFile(path);
-    (fs.fileData[path] ??= <int>[]).addAll(dbBytes);
-    return _sqlite3!.open(path);
+    _sqlite3 ??= await WasmSqlite3.loadFromUrl(Uri.parse('sqlite3.wasm'));
+    if (!_vfsRegistered) {
+      _sqlite3!.registerVirtualFileSystem(_fs, makeDefault: true);
+      _vfsRegistered = true;
+    }
+    // 인메모리 FS에 DB 바이트를 주입한 뒤 연다.
+    _fs.fileData[_path] = Uint8Buffer()..addAll(dbBytes);
+    return _sqlite3!.open(_path);
   }
 }
 ```
 
-> 검증 필수: `flutter analyze` 통과 후, 위 FS 주입부가 설치 버전 API와 맞는지 확인한다. 맞지 않으면 문서의 권장 패턴(예: `fs.xWrite` 또는 `IndexedDbFileSystem`)으로 교체하되, 시그니처 `open(Uint8List) → Future<CommonDatabase>`는 유지한다.
+> 참고: `WasmSqlite3.loadFromUrl`은 `environment` 인자가 없다(3.3.1). VFS는 `registerVirtualFileSystem(fs, makeDefault: true)`로 등록하고, `InMemoryFileSystem.fileData`(public `Map<String, Uint8Buffer?>`)에 바이트를 직접 주입한다. `CommonDatabase`는 `wasm.dart`가 재export한다.
 
 - [ ] **Step 3: 빌드/정적분석 확인**
 

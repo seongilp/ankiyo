@@ -29,8 +29,7 @@ class AnkiCollectionReader {
   final CommonDatabase db;
   final CardBuilder _builder;
 
-  AnkiCollectionReader(this.db, {CardBuilder builder = const CardBuilder()})
-      : _builder = builder;
+  AnkiCollectionReader(this.db, {this._builder = const CardBuilder()});
 
   Map<String, dynamic> _col() {
     final row = db.select('SELECT models, decks FROM col LIMIT 1').first;

@@ -7,7 +7,7 @@ import 'models.dart';
 class ImportService {
   final DeckRepository _repo;
   final Uuid _uuid;
-  ImportService(this._repo, {Uuid uuid = const Uuid()}) : _uuid = uuid;
+  ImportService(this._repo, {this._uuid = const Uuid()});
 
   /// 파싱된 덱/카드를 저장한다. 카드가 있는 덱만 저장하고, 저장한 Deck 목록을 반환.
   Future<List<Deck>> importParsed({
