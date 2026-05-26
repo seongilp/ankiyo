@@ -6,6 +6,7 @@ import '../storage/settings_store.dart';
 import 'controllers/deck_list_controller.dart';
 import 'controllers/settings_controller.dart';
 import 'deck_list_screen.dart';
+import 'theme.dart';
 
 class AnkiyoApp extends StatelessWidget {
   final Database db;
@@ -23,7 +24,10 @@ class AnkiyoApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'ankiyo',
-        theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
+        debugShowCheckedModeBanner: false,
+        theme: buildTheme(Brightness.light),
+        darkTheme: buildTheme(Brightness.dark),
+        themeMode: ThemeMode.system,
         home: const DeckListScreen(),
       ),
     );

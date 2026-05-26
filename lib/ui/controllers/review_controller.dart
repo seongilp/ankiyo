@@ -31,6 +31,9 @@ class ReviewController extends ChangeNotifier {
   bool get showingBack => _showingBack;
   bool get isDone => _index >= _queue.length;
   int get remaining => _queue.length - _index;
+  int get total => _queue.length;
+  int get reviewed => _index;
+  double get progress => _queue.isEmpty ? 1 : _index / _queue.length;
   StudyCard? get current => isDone ? null : _queue[_index];
 
   Future<void> load() async {

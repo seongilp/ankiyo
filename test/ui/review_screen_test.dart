@@ -45,8 +45,8 @@ void main() {
       await Future<void>.delayed(const Duration(milliseconds: 100));
       await tester.pump();
 
-      expect(find.text('정답 보기 (Space)'), findsOneWidget);
-      await tester.tap(find.text('정답 보기 (Space)'));
+      expect(find.text('정답 보기  ·  Space'), findsOneWidget);
+      await tester.tap(find.text('정답 보기  ·  Space'));
       await tester.pump();
 
       expect(find.text('좋음'), findsOneWidget);
@@ -55,7 +55,7 @@ void main() {
       await Future<void>.delayed(const Duration(milliseconds: 100));
       await tester.pump();
 
-      expect(find.text('오늘 학습 완료! 🎉'), findsOneWidget);
+      expect(find.text('오늘 학습 완료!'), findsOneWidget);
     });
   });
 }
