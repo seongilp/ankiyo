@@ -24,7 +24,7 @@ void main() {
     expect(bonjour.backHtml, contains('Hello'));
     expect(bonjour.deckAnkiId, 2);
 
-    db.dispose();
+    db.close();
     tmp.deleteSync();
   });
 }
