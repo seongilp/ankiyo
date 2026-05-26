@@ -1,10 +1,12 @@
+import 'num_parse.dart';
+
 class AnkiField {
   final String name;
   final int ord;
   const AnkiField({required this.name, required this.ord});
 
   factory AnkiField.fromJson(Map<String, dynamic> j) =>
-      AnkiField(name: j['name'] as String, ord: (j['ord'] as num).toInt());
+      AnkiField(name: j['name'] as String? ?? '', ord: asInt(j['ord']));
 }
 
 class AnkiTemplate {
@@ -20,7 +22,7 @@ class AnkiTemplate {
 
   factory AnkiTemplate.fromJson(Map<String, dynamic> j) => AnkiTemplate(
         name: j['name'] as String? ?? '',
-        ord: (j['ord'] as num).toInt(),
+        ord: asInt(j['ord']),
         qfmt: j['qfmt'] as String? ?? '',
         afmt: j['afmt'] as String? ?? '',
       );
@@ -55,9 +57,9 @@ class AnkiModel {
         .toList()
       ..sort((a, b) => a.ord.compareTo(b.ord));
     return AnkiModel(
-      id: (j['id'] as num).toInt(),
+      id: asInt(j['id']),
       name: j['name'] as String? ?? '',
-      type: (j['type'] as num?)?.toInt() ?? 0,
+      type: j['type'] == null ? 0 : asInt(j['type']),
       css: j['css'] as String? ?? '',
       fields: flds,
       templates: tmpls,

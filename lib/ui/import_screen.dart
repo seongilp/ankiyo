@@ -23,7 +23,7 @@ class _ImportScreenState extends State<ImportScreen> {
       _status = '파일 선택 중...';
     });
     try {
-      final result = await FilePicker.platform.pickFiles(
+      final result = await FilePicker.pickFiles(
           type: FileType.custom, allowedExtensions: ['apkg'], withData: true);
       if (result == null || result.files.single.bytes == null) {
         setState(() {

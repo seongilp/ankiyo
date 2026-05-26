@@ -3,6 +3,7 @@ import 'package:sqlite3/common.dart';
 import 'anki_model.dart';
 import 'anki_note.dart';
 import 'card_builder.dart';
+import 'num_parse.dart';
 
 class ParsedDeck {
   final int ankiId;
@@ -44,7 +45,7 @@ class AnkiCollectionReader {
     return decks.entries.map((e) {
       final v = Map<String, dynamic>.from(e.value as Map);
       return ParsedDeck(
-          ankiId: int.parse(e.key), name: v['name'] as String? ?? '?');
+          ankiId: asInt(e.key), name: v['name'] as String? ?? '?');
     }).toList();
   }
 
@@ -60,24 +61,25 @@ class AnkiCollectionReader {
     // 노트 캐시
     final notes = <int, AnkiNote>{};
     for (final r in db.select('SELECT id, mid, flds FROM notes')) {
-      notes[r['id'] as int] = AnkiNote(
-        id: r['id'] as int,
-        mid: r['mid'] as int,
+      final id = asInt(r['id']);
+      notes[id] = AnkiNote(
+        id: id,
+        mid: asInt(r['mid']),
         fieldsRaw: r['flds'] as String,
       );
     }
 
     final result = <ParsedCard>[];
     for (final r in db.select('SELECT nid, did, ord FROM cards')) {
-      final note = notes[r['nid'] as int];
+      final note = notes[asInt(r['nid'])];
       if (note == null) continue;
       final model = models[note.mid];
       if (model == null) continue; // 깨진 노트 → 건너뜀
       try {
         final built =
-            _builder.build(note: note, model: model, ord: r['ord'] as int);
+            _builder.build(note: note, model: model, ord: asInt(r['ord']));
         result.add(ParsedCard(
-          deckAnkiId: r['did'] as int,
+          deckAnkiId: asInt(r['did']),
           frontHtml: built.frontHtml,
           backHtml: built.backHtml,
           isCloze: built.isCloze,
