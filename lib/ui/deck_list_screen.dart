@@ -4,8 +4,10 @@ import '../srs/scheduler.dart';
 import '../storage/deck_repository.dart';
 import 'controllers/deck_list_controller.dart';
 import 'controllers/review_controller.dart';
+import 'controllers/settings_controller.dart';
 import 'import_screen.dart';
 import 'review_screen.dart';
+import 'settings_screen.dart';
 
 class DeckListScreen extends StatefulWidget {
   const DeckListScreen({super.key});
@@ -26,8 +28,15 @@ class _DeckListScreenState extends State<DeckListScreen> {
   Widget build(BuildContext context) {
     final c = context.watch<DeckListController>();
     final repo = context.read<DeckRepository>();
+    final settings = context.watch<SettingsController>().settings;
     return Scaffold(
-      appBar: AppBar(title: const Text('내 덱')),
+      appBar: AppBar(title: const Text('내 덱'), actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const SettingsScreen())),
+        ),
+      ]),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           await Navigator.push(context,
@@ -60,8 +69,8 @@ class _DeckListScreenState extends State<DeckListScreen> {
                                 repo: repo,
                                 scheduler: const Scheduler(),
                                 deckId: s.deck.id,
-                                newLimit: 20,
-                                reviewLimit: 200,
+                                newLimit: settings.newLimit,
+                                reviewLimit: settings.reviewLimit,
                               ),
                               child: const ReviewScreen(),
                             ),
