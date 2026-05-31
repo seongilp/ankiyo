@@ -36,13 +36,17 @@ dependencies:
   cupertino_icons: ^1.0.8
   archive: ^4.0.9
   sqlite3: ^3.3.1
+  sqlite3_flutter_libs: ^0.5.27
+  path_provider: ^2.1.4
+  path: ^1.9.0
   sembast: ^3.8.7
   sembast_web: ^2.4.4+1
   flutter_widget_from_html: ^0.17.2
-  file_picker: ^11.0.0
+  file_picker: ^11.0.2
   provider: ^6.1.5+1
   uuid: ^4.5.3
   typed_data: ^1.4.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:

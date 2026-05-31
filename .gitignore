@@ -6,3 +6,8 @@ build/
 *.iml
 .idea/
 .DS_Store
+
+# Local secrets
+.env
+.env.*
+.gstack/

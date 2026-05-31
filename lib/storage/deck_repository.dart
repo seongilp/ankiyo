@@ -29,8 +29,21 @@ class DeckRepository {
     return records.map((r) => StudyCard.fromMap(r.value)).toList();
   }
 
+  Future<List<StudyCard>> getCardsByIds(Set<String> ids) async {
+    if (ids.isEmpty) return const [];
+    final records = await _cards.find(_db,
+        finder: Finder(filter: Filter.inList('id', ids.toList())));
+    return records.map((r) => StudyCard.fromMap(r.value)).toList();
+  }
+
   Future<void> updateCard(StudyCard card) async {
     await _cards.record(card.id).put(_db, card.toMap());
+  }
+
+  Future<void> renameDeck(String deckId, String newName) async {
+    final cur = await _decks.record(deckId).get(_db);
+    if (cur == null) return;
+    await _decks.record(deckId).put(_db, {...cur, 'name': newName});
   }
 
   Future<void> deleteDeck(String deckId) async {

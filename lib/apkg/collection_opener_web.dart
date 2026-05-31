@@ -24,3 +24,5 @@ class WebCollectionOpener implements CollectionOpener {
     return _sqlite3!.open(_path);
   }
 }
+
+CollectionOpener createCollectionOpener() => WebCollectionOpener();

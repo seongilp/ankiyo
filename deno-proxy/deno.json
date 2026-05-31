@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-net --allow-env main.ts",
+    "deploy": "deployctl deploy --project=ankiyo-proxy main.ts"
+  }
+}

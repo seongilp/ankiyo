@@ -1,7 +1,5 @@
-import 'package:sembast_web/sembast_web.dart';
+import 'package:sembast/sembast.dart';
+import 'db_web.dart' if (dart.library.io) 'db_native.dart' as impl;
 
-/// 웹: IndexedDB. (네이티브 포팅 시 sembast_io로 분기 추가)
-Future<Database> openAppDatabase() async {
-  final factory = databaseFactoryWeb;
-  return factory.openDatabase('ankiyo.db');
-}
+/// 웹: IndexedDB (sembast_web). 네이티브: 앱 문서 디렉토리의 파일 (sembast_io).
+Future<Database> openAppDatabase() => impl.openAppDatabase();

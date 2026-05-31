@@ -6,9 +6,11 @@ import 'package:ankiyo/storage/deck_repository.dart';
 
 void main() {
   late DeckRepository repo;
+  var seq = 0;
 
   setUp(() async {
-    final db = await databaseFactoryMemory.openDatabase('test.db');
+    final db =
+        await databaseFactoryMemory.openDatabase('repo_${seq++}.db');
     repo = DeckRepository(db);
   });
 
@@ -54,6 +56,25 @@ void main() {
     await repo.updateCard(card.withState(card.state.copyWith(reps: 9)));
     final loaded = await repo.getCards('d1');
     expect(loaded.first.state.reps, 9);
+  });
+
+  test('renameDeck은 이름만 바꾼다 (importedAt, 카드 보존)', () async {
+    final now = DateTime.utc(2026, 1, 1);
+    await repo.saveDeck(Deck(id: 'd1', name: '원본', importedAt: now), [
+      StudyCard(
+          id: 'c1',
+          deckId: 'd1',
+          frontHtml: 'A',
+          backHtml: 'B',
+          isCloze: false,
+          state: CardState.create(now)),
+    ]);
+    await repo.renameDeck('d1', '새 이름');
+
+    final decks = await repo.getDecks();
+    expect(decks.single.name, '새 이름');
+    expect(decks.single.importedAt, now);
+    expect((await repo.getCards('d1')).length, 1);
   });
 
   test('덱 삭제 시 카드도 삭제된다', () async {

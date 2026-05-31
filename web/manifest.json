@@ -3,9 +3,9 @@
     "short_name": "ankiyo",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#1A1D29",
+    "theme_color": "#1A1D29",
+    "description": "본문을 붙여 넣으면 단어 카드를 자동으로 만들어 주는 간단한 간격 반복 학습 앱.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

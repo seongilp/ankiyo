@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../apkg/anki_db.dart';
 import '../apkg/apkg_reader.dart';
-import '../apkg/collection_opener_web.dart';
+import '../apkg/collection_opener.dart';
 import '../storage/deck_repository.dart';
 import '../storage/import_service.dart';
 
@@ -38,7 +38,7 @@ class _ImportScreenState extends State<ImportScreen> {
       final dbBytes = ApkgReader.extractCollection(result.files.single.bytes!);
 
       setState(() => _status = '카드 읽는 중...');
-      final db = await WebCollectionOpener().open(dbBytes);
+      final db = await createCollectionOpener().open(dbBytes);
       final reader = AnkiCollectionReader(db);
       final decks = reader.readDecks();
       final cards = reader.readCards();

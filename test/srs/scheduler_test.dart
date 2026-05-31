@@ -6,30 +6,47 @@ void main() {
   final now = DateTime.utc(2026, 1, 1, 9);
   const sched = Scheduler(); // 기본 config
 
-  group('신규/학습 카드', () {
-    test('Again은 학습 첫 스텝(1분 뒤)으로 보낸다', () {
-      final s = CardState.create(now);
+  group('신규/학습 카드 - 사다리 [10분, 10시간, 2일, 7일]', () {
+    test('Again은 첫 스텝(10분 뒤)으로 리셋한다', () {
+      final s = CardState.create(now).copyWith(
+          status: CardStatus.learning, learningStepIndex: 2);
       final r = sched.review(s, Rating.again, now);
       expect(r.status, CardStatus.learning);
       expect(r.learningStepIndex, 0);
-      expect(r.due, now.add(const Duration(minutes: 1)));
-    });
-
-    test('Good은 다음 학습 스텝(10분 뒤)으로 전진한다', () {
-      final s = CardState.create(now); // stepIndex 0
-      final r = sched.review(s, Rating.good, now);
-      expect(r.status, CardStatus.learning);
-      expect(r.learningStepIndex, 1);
       expect(r.due, now.add(const Duration(minutes: 10)));
     });
 
-    test('마지막 스텝에서 Good이면 졸업(1일 간격)', () {
+    test('새 카드 Good → 10시간 뒤(저녁) 복습', () {
+      final s = CardState.create(now);
+      final r = sched.review(s, Rating.good, now);
+      expect(r.status, CardStatus.learning);
+      expect(r.learningStepIndex, 1);
+      expect(r.due, now.add(const Duration(hours: 10)));
+    });
+
+    test('저녁 Good → 2일 뒤 복습', () {
       final s = CardState.create(now).copyWith(
           status: CardStatus.learning, learningStepIndex: 1);
       final r = sched.review(s, Rating.good, now);
+      expect(r.learningStepIndex, 2);
+      expect(r.due, now.add(const Duration(days: 2)));
+    });
+
+    test('2일 후 Good → 7일 뒤 복습', () {
+      final s = CardState.create(now).copyWith(
+          status: CardStatus.learning, learningStepIndex: 2);
+      final r = sched.review(s, Rating.good, now);
+      expect(r.learningStepIndex, 3);
+      expect(r.due, now.add(const Duration(days: 7)));
+    });
+
+    test('7일 후 Good → 졸업(14일 간격)', () {
+      final s = CardState.create(now).copyWith(
+          status: CardStatus.learning, learningStepIndex: 3);
+      final r = sched.review(s, Rating.good, now);
       expect(r.status, CardStatus.review);
-      expect(r.intervalDays, 1);
-      expect(r.due, now.add(const Duration(days: 1)));
+      expect(r.intervalDays, 14);
+      expect(r.due, now.add(const Duration(days: 14)));
       expect(r.reps, 1);
     });
 

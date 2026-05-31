@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../srs/card_state.dart';
 import 'controllers/review_controller.dart';
+import 'format_due.dart';
 import 'widgets/card_view.dart';
 
 class ReviewScreen extends StatefulWidget {
@@ -49,7 +50,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
     final c = context.watch<ReviewController>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('복습'),
+        title: Text(c.drillMode ? '약한 카드 복습' : '복습'),
         bottom: c.loading || c.total == 0
             ? null
             : PreferredSize(
@@ -212,6 +213,7 @@ class _RateButton extends StatelessWidget {
         break;
     }
 
+    final preview = controller.previewLabel(rating);
     return Expanded(
       child: Material(
         color: bg,
@@ -231,10 +233,12 @@ class _RateButton extends StatelessWidget {
                 Text(label,
                     style: TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w700, color: fg)),
-                const SizedBox(height: 2),
-                Text(controller.previewLabel(rating),
-                    style: TextStyle(
-                        fontSize: 11, color: fg.withValues(alpha: 0.75))),
+                if (preview.isNotEmpty) ...[
+                  const SizedBox(height: 2),
+                  Text(preview,
+                      style: TextStyle(
+                          fontSize: 11, color: fg.withValues(alpha: 0.75))),
+                ],
               ],
             ),
           ),
@@ -250,6 +254,7 @@ class _DoneView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final c = context.read<ReviewController>();
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -271,13 +276,53 @@ class _DoneView extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   color: scheme.onSurface)),
           const SizedBox(height: 8),
-          Text('수고했어요. 내일 또 만나요 👋',
+          Text('${c.total}장 풀었어요. 수고했어요 👋',
               style:
                   TextStyle(fontSize: 14, color: scheme.onSurfaceVariant)),
-          const SizedBox(height: 28),
+          const SizedBox(height: 20),
+          if (c.drillMode)
+            Text('약한 카드를 한 바퀴 돌았어요. 계속 반복해보세요.',
+                style: TextStyle(
+                    fontSize: 13, color: scheme.onSurfaceVariant))
+          else
+          FutureBuilder<DateTime?>(
+            future: c.nextDueAtForDeck(),
+            builder: (_, snap) {
+              final next = snap.data;
+              if (next == null) {
+                return Text('다음 복습 예정 없음',
+                    style: TextStyle(
+                        fontSize: 13, color: scheme.onSurfaceVariant));
+              }
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(999),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.schedule_rounded,
+                        size: 16, color: scheme.onSurfaceVariant),
+                    const SizedBox(width: 6),
+                    Text(
+                      '다음 복습 — ${formatNextDue(DateTime.now(), next)}',
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: scheme.onSurface),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 24),
           FilledButton.tonal(
             onPressed: () => Navigator.pop(context),
-            child: const Text('덱 목록으로'),
+            child: Text(c.drillMode ? '돌아가기' : '덱 목록으로'),
           ),
         ],
       ),

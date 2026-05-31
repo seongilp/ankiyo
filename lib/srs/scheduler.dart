@@ -14,7 +14,13 @@ class SchedulerConfig {
   final double lapseNewIntervalFactor;
 
   const SchedulerConfig({
-    this.learningSteps = const [Duration(minutes: 1), Duration(minutes: 10)],
+    // [0] Again 재시도, [1] 첫 통과 후 약 저녁(10시간), [2] 2일, [3] 7일.
+    this.learningSteps = const [
+      Duration(minutes: 10),
+      Duration(hours: 10),
+      Duration(days: 2),
+      Duration(days: 7),
+    ],
     this.relearningSteps = const [Duration(minutes: 10)],
     this.minEase = 1.3,
     this.easeAgainDelta = -0.20,
@@ -22,7 +28,8 @@ class SchedulerConfig {
     this.easeEasyDelta = 0.15,
     this.hardMultiplier = 1.2,
     this.easyBonus = 1.3,
-    this.graduatingIntervalDays = 1,
+    // 7일 단계 통과 후 졸업 간격(이후 SM-2가 ease로 늘려나감).
+    this.graduatingIntervalDays = 14,
     this.easyIntervalDays = 4,
     this.lapseNewIntervalFactor = 0.0,
   });
