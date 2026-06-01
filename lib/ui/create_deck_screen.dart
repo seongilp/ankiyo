@@ -18,11 +18,9 @@ class _CreateDeckScreenState extends State<CreateDeckScreen> {
   @override
   void initState() {
     super.initState();
-    // 덱 이름 기본값: 오늘 날짜 (예: 2026-06-01). 사용자가 덮어쓸 수 있음.
+    // 덱 이름 기본값: 오늘 날짜 (예: 2026.6.1). 사용자가 덮어쓸 수 있음.
     final now = DateTime.now();
-    final m = now.month.toString().padLeft(2, '0');
-    final d = now.day.toString().padLeft(2, '0');
-    _nameCtrl.text = '${now.year}-$m-$d';
+    _nameCtrl.text = '${now.year}.${now.month}.${now.day}';
   }
 
   @override
