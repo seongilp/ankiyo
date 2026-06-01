@@ -91,6 +91,26 @@
     setTimeout(hideAnkiyoSplash, 8000);
   </script>
 
+  <script>
+    // 기존에 등록된 service worker를 해제하고 캐시를 비운다.
+    // (잦은 배포 중 옛 JS가 캐시되어 신버전이 안 뜨는 문제 방지)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        regs.forEach(function (r) { r.unregister(); });
+      }).catch(function () {});
+    }
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (keys) {
+        keys.forEach(function (k) { caches.delete(k); });
+      }).catch(function () {});
+    }
+  </script>
+
+  <!-- Flutter SW 자동등록 비활성화: 항상 최신 코드 로드 -->
+  <script>
+    window._flutter = window._flutter || {};
+    window._flutter.loader = window._flutter.loader || {};
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
