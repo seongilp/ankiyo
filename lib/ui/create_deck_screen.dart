@@ -16,6 +16,16 @@ class _CreateDeckScreenState extends State<CreateDeckScreen> {
   final _textCtrl = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    // 덱 이름 기본값: 오늘 날짜 (예: 2026-06-01). 사용자가 덮어쓸 수 있음.
+    final now = DateTime.now();
+    final m = now.month.toString().padLeft(2, '0');
+    final d = now.day.toString().padLeft(2, '0');
+    _nameCtrl.text = '${now.year}-$m-$d';
+  }
+
+  @override
   void dispose() {
     _nameCtrl.dispose();
     _textCtrl.dispose();

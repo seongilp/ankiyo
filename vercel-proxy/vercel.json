@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/v1/chat/completions", "destination": "/api/messages" },
+    { "source": "/v1/messages", "destination": "/api/messages" },
     { "source": "/health", "destination": "/api/health" }
   ]
 }
