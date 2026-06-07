@@ -45,22 +45,43 @@ class SeedService {
     final installed = await _installedVersion();
     if (installed >= manifest.version) return 0;
 
-    var count = 0;
-    for (final file in manifest.files) {
-      final raw = await _tryLoadString('assets/decks/$file');
+    // 정렬 키: manifest 나열 순서 = 화면 순서. 시드 시각과 무관하게 항상
+    // 같은 순서가 되도록 고정 epoch + manifest 인덱스 오프셋을 쓴다.
+    // (importedAt 은 UI에 표시되지 않고 정렬에만 쓰임.) 사용자가 직접 만든
+    // 덱은 now() 기준이라 시드 덱들보다 뒤(아래)에 놓인다.
+    final base = DateTime.utc(2020, 1, 1);
+
+    // 이미 시드된 덱은 이름으로 찾아 순서만 갱신(학습 진행/카드 보존),
+    // 없는 것만 새로 만든다 — 버전이 올라가도 중복 생성/진행 손실이 없다.
+    final existingByName = {for (final d in await _repo.getDecks()) d.name: d};
+
+    var created = 0;
+    for (var i = 0; i < manifest.files.length; i++) {
+      final raw = await _tryLoadString('assets/decks/${manifest.files[i]}');
       if (raw == null) continue;
       final parsed = _parseDeck(raw);
       if (parsed == null || parsed.cards.isEmpty) continue;
-      await _saveSeedDeck(parsed, now);
-      count++;
+
+      final importedAt = base.add(Duration(minutes: i));
+      final existing = existingByName[parsed.name];
+      if (existing != null) {
+        await _repo.updateDeckImportedAt(existing.id, importedAt);
+      } else {
+        await _saveSeedDeck(parsed, importedAt: importedAt, now: now);
+        created++;
+      }
     }
 
     await _setInstalledVersion(manifest.version);
-    return count;
+    return created;
   }
 
-  Future<void> _saveSeedDeck(_SeedDeck parsed, DateTime now) async {
-    final deck = Deck(id: _uuid.v4(), name: parsed.name, importedAt: now);
+  Future<void> _saveSeedDeck(
+    _SeedDeck parsed, {
+    required DateTime importedAt,
+    required DateTime now,
+  }) async {
+    final deck = Deck(id: _uuid.v4(), name: parsed.name, importedAt: importedAt);
     final cards = parsed.cards
         .map((c) => StudyCard(
               id: _uuid.v4(),

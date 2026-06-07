@@ -46,6 +46,15 @@ class DeckRepository {
     await _decks.record(deckId).put(_db, {...cur, 'name': newName});
   }
 
+  /// 덱의 정렬 키(importedAt)만 갱신한다. 카드/학습 진행은 그대로 둔다.
+  Future<void> updateDeckImportedAt(String deckId, DateTime importedAt) async {
+    final cur = await _decks.record(deckId).get(_db);
+    if (cur == null) return;
+    await _decks
+        .record(deckId)
+        .put(_db, {...cur, 'importedAt': importedAt.toIso8601String()});
+  }
+
   Future<void> deleteDeck(String deckId) async {
     await _db.transaction((txn) async {
       await _decks.record(deckId).delete(txn);

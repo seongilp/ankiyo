@@ -1,6 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "files": [
+    "deck13.json",
     "deck01.json",
     "deck02.json",
     "deck03.json",
@@ -12,7 +13,6 @@
     "deck09.json",
     "deck10.json",
     "deck11.json",
-    "deck12.json",
-    "deck13.json"
+    "deck12.json"
   ]
 }

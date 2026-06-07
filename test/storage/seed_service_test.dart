@@ -67,6 +67,17 @@ void main() {
     expect(cards.every((c) => c.state.reps == 0), true);
   });
 
+  test('덱은 manifest 나열 순서대로 정렬된다', () async {
+    final db = await databaseFactoryMemory.openDatabase('seed_order.db');
+    final repo = DeckRepository(db);
+    await SeedService(repo, db, bundle: _FakeBundle(_bundleV(1)))
+        .seedIfNeeded(now);
+
+    // getDecks 는 importedAt 오름차순 → manifest 의 files 순서와 같아야 한다.
+    final names = (await repo.getDecks()).map((d) => d.name).toList();
+    expect(names, ['Deck One', 'Deck Two']);
+  });
+
   test('두 번째 실행은 같은 버전이면 다시 시드하지 않는다(중복 방지)', () async {
     final db = await databaseFactoryMemory.openDatabase('seed2.db');
     final repo = DeckRepository(db);
@@ -77,7 +88,7 @@ void main() {
     expect((await repo.getDecks()).length, 2);
   });
 
-  test('manifest 버전이 올라가면 다시 시드한다', () async {
+  test('버전이 올라가면 중복 없이 순서만 갱신하고 진행을 보존한다', () async {
     final db = await databaseFactoryMemory.openDatabase('seed3.db');
     final repo = DeckRepository(db);
 
@@ -85,10 +96,22 @@ void main() {
         await SeedService(repo, db, bundle: _FakeBundle(_bundleV(1)))
             .seedIfNeeded(now),
         2);
+
+    // 사용자가 한 덱을 학습했다고 가정(진행 기록 생성)
+    final one = (await repo.getDecks()).firstWhere((d) => d.name == 'Deck One');
+    final card = (await repo.getCards(one.id)).first;
+    await repo.updateCard(card.withState(card.state.copyWith(reps: 5)));
+
+    // 버전 업 재시드: 새 덱 생성 0, 중복 없음
     expect(
         await SeedService(repo, db, bundle: _FakeBundle(_bundleV(2)))
             .seedIfNeeded(now),
-        2);
+        0);
+    expect((await repo.getDecks()).length, 2);
+
+    // 학습 진행 보존
+    final after = (await repo.getCards(one.id)).firstWhere((c) => c.id == card.id);
+    expect(after.state.reps, 5);
   });
 
   test('자산이 없으면 조용히 0을 반환한다', () async {
