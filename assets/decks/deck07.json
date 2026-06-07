@@ -1,0 +1,27 @@
+{
+  "name": "일본말 첫걸음 25~28과",
+  "cards": [
+    {"front": "顔色が悪い", "back": "<b>かおいろがわるい</b> · kaoiro ga warui<br>안색이 나쁘다", "isCloze": false},
+    {"front": "のど", "back": "<b>のど</b> · nodo<br>목", "isCloze": false},
+    {"front": "痛い", "back": "<b>いたい</b> · itai<br>아프다", "isCloze": false},
+    {"front": "のどが痛いんです。", "back": "Nodo ga itain desu.<br>목이 아프거든요.", "isCloze": false},
+    {"front": "卵焼き", "back": "<b>たまごやき</b> · tamago-yaki<br>계란말이", "isCloze": false},
+    {"front": "甘い", "back": "<b>あまい</b> · amai<br>달다", "isCloze": false},
+    {"front": "料理", "back": "<b>りょうり</b> · ryoori<br>요리", "isCloze": false},
+    {"front": "この卵焼き、甘くておいしいです。", "back": "Kono tamago-yaki, amakute oishii desu.<br>이 계란말이 달고 맛있어요.", "isCloze": false},
+    {"front": "～にする", "back": "<b>～にする</b> · ～ni suru<br>～로 하다", "isCloze": false},
+    {"front": "どれ", "back": "<b>どれ</b> · dore<br>어느 것", "isCloze": false},
+    {"front": "一番〜", "back": "<b>いちばん〜</b> · ichiban ～<br>제일～", "isCloze": false},
+    {"front": "みそラーメン", "back": "<b>みそラーメン</b> · miso-raamen<br>된장라면", "isCloze": false},
+    {"front": "おすすめ", "back": "<b>おすすめ</b> · osusume<br>추천", "isCloze": false},
+    {"front": "日本", "back": "<b>にほん</b> · Nihon<br>일본", "isCloze": false},
+    {"front": "どれが一番おいしいですか。", "back": "Dore ga ichiban oishii desu ka.<br>어느 게 제일 맛있어요？", "isCloze": false},
+    {"front": "大人", "back": "<b>おとな</b> · otona<br>어른", "isCloze": false},
+    {"front": "ええ", "back": "<b>ええ</b> · ee<br>네", "isCloze": false},
+    {"front": "すてき（な）", "back": "<b>すてき（な）</b> · suteki（na）<br>멋지다", "isCloze": false},
+    {"front": "お客様", "back": "<b>おきゃくさま</b> · okyakusama<br>손님", "isCloze": false},
+    {"front": "先", "back": "<b>さき</b> · saki<br>앞쪽", "isCloze": false},
+    {"front": "遠慮する", "back": "<b>えんりょする</b> · enryo-suru<br>삼가다", "isCloze": false},
+    {"front": "写真を撮ってもいいですか。", "back": "Shashin o totte mo ii desu ka.<br>사진을 찍어도 돼요？", "isCloze": false}
+  ]
+}

@@ -11,3 +11,6 @@ build/
 .env
 .env.*
 .gstack/
+
+# 원본 교재 PDF (용량 큼, 시드 덱은 assets/decks 에 생성됨)
+docs/*.pdf

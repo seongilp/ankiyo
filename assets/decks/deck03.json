@@ -1,0 +1,33 @@
+{
+  "name": "일본말 첫걸음 9~12과",
+  "cards": [
+    {"front": "ここ", "back": "<b>ここ</b> · koko<br>여기", "isCloze": false},
+    {"front": "これ", "back": "<b>これ</b> · kore<br>이것", "isCloze": false},
+    {"front": "デパ地下", "back": "<b>デパちか</b> · depa-chika<br>백화점 지하 식품매장", "isCloze": false},
+    {"front": "何", "back": "<b>なん</b> · nan<br>무엇", "isCloze": false},
+    {"front": "食べ物", "back": "<b>たべもの</b> · tabemono<br>음식", "isCloze": false},
+    {"front": "漬物", "back": "<b>つけもの</b> · tsukemono<br>장아찌", "isCloze": false},
+    {"front": "これは何ですか。", "back": "Kore wa nan desu ka.<br>이것은 뭐예요？", "isCloze": false},
+    {"front": "おいしいです。", "back": "Oishii desu.<br>맛있어요.", "isCloze": false},
+    {"front": "いくら", "back": "<b>いくら</b> · ikura<br>얼마", "isCloze": false},
+    {"front": "書く", "back": "<b>かく</b> · kaku<br>쓰다", "isCloze": false},
+    {"front": "ドライヤー", "back": "<b>ドライヤー</b> · doraiyaa<br>헤어드라이어", "isCloze": false},
+    {"front": "このドライヤーはいくらですか。", "back": "Kono doraiyaa wa ikura desu ka.<br>이 헤어드라이어는 얼마예요？", "isCloze": false},
+    {"front": "お守り", "back": "<b>おまもり</b> · omamori<br>부적", "isCloze": false},
+    {"front": "ある", "back": "<b>ある</b> · aru<br>있다", "isCloze": false},
+    {"front": "お寺", "back": "<b>おてら</b> · otera<br>절", "isCloze": false},
+    {"front": "お守りはありますか。", "back": "Omamori wa arimasu ka.<br>부적은 있어요？", "isCloze": false},
+    {"front": "いらっしゃいませ。", "back": "Irasshaimase.<br>어서 오세요.", "isCloze": false},
+    {"front": "かわいい", "back": "<b>かわいい</b> · kawaii<br>귀엽다", "isCloze": false},
+    {"front": "本当", "back": "<b>ほんとう</b> · hontoo<br>정말", "isCloze": false},
+    {"front": "いい", "back": "<b>いい</b> · ii<br>좋다", "isCloze": false},
+    {"front": "それ", "back": "<b>それ</b> · sore<br>그것", "isCloze": false},
+    {"front": "縁結び", "back": "<b>えんむすび</b> · enmusubi<br>연분을 맺어 줌", "isCloze": false},
+    {"front": "～になる", "back": "<b>～になる</b> · ~ ni naru<br>～이 되다", "isCloze": false},
+    {"front": "恋人", "back": "<b>こいびと</b> · koibito<br>애인", "isCloze": false},
+    {"front": "できる", "back": "<b>できる</b> · dekiru<br>생기다", "isCloze": false},
+    {"front": "じゃあ", "back": "<b>じゃあ</b> · jaa<br>그럼", "isCloze": false},
+    {"front": "かわいいお守りですね。", "back": "Kawaii omamori desu ne.<br>귀여운 부적이네요.", "isCloze": false},
+    {"front": "これをください。", "back": "Kore o kudasai.<br>이것을 주세요.", "isCloze": false}
+  ]
+}

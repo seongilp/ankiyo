@@ -1,0 +1,27 @@
+{
+  "name": "일본말 첫걸음 5~8과",
+  "cards": [
+    {"front": "今日", "back": "<b>きょう</b> · kyoo<br>오늘", "isCloze": false},
+    {"front": "はい", "back": "<b>はい</b> · hai<br>네", "isCloze": false},
+    {"front": "心配（な）", "back": "<b>しんぱい（な）</b> · shinpai (na)<br>걱정", "isCloze": false},
+    {"front": "上手（な）", "back": "<b>じょうず（な）</b> · joozu (na)<br>잘하다", "isCloze": false},
+    {"front": "ラジオ", "back": "<b>ラジオ</b> · rajio<br>라디오", "isCloze": false},
+    {"front": "大丈夫（な）", "back": "<b>だいじょうぶ（な）</b> · daijoobu (na)<br>괜찮다", "isCloze": false},
+    {"front": "ラジオで勉強しました。", "back": "Rajio de benkyoo-shimashita.<br>라디오로 공부했어요.", "isCloze": false},
+    {"front": "この", "back": "<b>この</b> · kono<br>이", "isCloze": false},
+    {"front": "電車", "back": "<b>でんしゃ</b> · densha<br>전철", "isCloze": false},
+    {"front": "いいえ", "back": "<b>いいえ</b> · iie<br>아니요", "isCloze": false},
+    {"front": "山手線", "back": "<b>やまのてせん</b> · Yamanote-sen<br>야마노테선", "isCloze": false},
+    {"front": "～番線", "back": "<b>～ばんせん</b> · ~ban-sen<br>〜번선", "isCloze": false},
+    {"front": "わかる", "back": "<b>わかる</b> · wakaru<br>알다", "isCloze": false},
+    {"front": "この電車は池袋に行きますか。", "back": "Kono densha wa Ikebukuro ni ikimasu ka.<br>이 전철은 이케부쿠로에 가요？", "isCloze": false},
+    {"front": "ゆっくり", "back": "<b>ゆっくり</b> · yukkuri<br>천천히", "isCloze": false},
+    {"front": "話す", "back": "<b>はなす</b> · hanasu<br>말하다", "isCloze": false},
+    {"front": "私", "back": "<b>わたし</b> · watashi<br>저", "isCloze": false},
+    {"front": "ゆっくり話してください。", "back": "Yukkuri hanashite kudasai.<br>천천히 말해 주세요.", "isCloze": false},
+    {"front": "遅れる", "back": "<b>おくれる</b> · okureru<br>늦다", "isCloze": false},
+    {"front": "ごめんなさい", "back": "<b>ごめんなさい</b> · gomen nasai<br>미안해요", "isCloze": false},
+    {"front": "友達", "back": "<b>ともだち</b> · tomodachi<br>친구", "isCloze": false},
+    {"front": "友達のあやかさんです。", "back": "Tomodachi no Ayaka-san desu.<br>친구인 아야카 씨예요.", "isCloze": false}
+  ]
+}

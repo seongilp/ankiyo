@@ -1,0 +1,29 @@
+{
+  "name": "일본말 첫걸음 29~32과",
+  "cards": [
+    {"front": "日曜日", "back": "<b>にちようび</b> · nichi-yoobi<br>일요일", "isCloze": false},
+    {"front": "ピアノ", "back": "<b>ピアノ</b> · piano<br>피아노", "isCloze": false},
+    {"front": "演奏", "back": "<b>えんそう</b> · ensoo<br>연주", "isCloze": false},
+    {"front": "聴く", "back": "<b>きく</b> · kiku<br>듣다", "isCloze": false},
+    {"front": "すばらしい", "back": "<b>すばらしい</b> · subarashii<br>근사하다", "isCloze": false},
+    {"front": "写真", "back": "<b>しゃしん</b> · shashin<br>사진", "isCloze": false},
+    {"front": "ピアノの演奏を聴きに行きました。", "back": "Piano no ensoo o kiki ni ikimashita.<br>피아노 연주를 들으러 갔어요.", "isCloze": false},
+    {"front": "メロンパフェ", "back": "<b>メロンパフェ</b> · meron-pafe<br>멜론 파르페", "isCloze": false},
+    {"front": "小学校", "back": "<b>しょうがっこう</b> · shoogakkoo<br>초등학교", "isCloze": false},
+    {"front": "ボランティア", "back": "<b>ボランティア</b> · borantia<br>자원봉사", "isCloze": false},
+    {"front": "一緒に", "back": "<b>いっしょに</b> · issho ni<br>같이", "isCloze": false},
+    {"front": "歌う", "back": "<b>うたう</b> · utau<br>노래를 부르다", "isCloze": false},
+    {"front": "踊る", "back": "<b>おどる</b> · odoru<br>춤을 추다", "isCloze": false},
+    {"front": "一緒に歌ったり、踊ったりしました。", "back": "Issho ni utattari, odottari shimashita.<br>같이 노래를 부르거나 춤을 추거나 했어요.", "isCloze": false},
+    {"front": "おいしそう！", "back": "Oishisoo!<br>맛있겠다！", "isCloze": false},
+    {"front": "今度", "back": "<b>こんど</b> · kondo<br>이번", "isCloze": false},
+    {"front": "博物館", "back": "<b>はくぶつかん</b> · hakubutsukan<br>박물관", "isCloze": false},
+    {"front": "残念（な）", "back": "<b>ざんねん（な）</b> · zannen(na)<br>아쉽다", "isCloze": false},
+    {"front": "一緒に行きませんか。", "back": "Issho ni ikimasen ka.<br>같이 가지 않을래요？", "isCloze": false},
+    {"front": "土曜日はちょっと・・・。", "back": "Do-yoobi wa chotto...<br>토요일은 좀・・・.", "isCloze": false},
+    {"front": "かっこいい", "back": "<b>かっこいい</b> · kakkoii<br>멋지다", "isCloze": false},
+    {"front": "うれしい", "back": "<b>うれしい</b> · ureshii<br>기쁘다", "isCloze": false},
+    {"front": "道", "back": "<b>みち</b> · michi<br>길", "isCloze": false},
+    {"front": "忍者博物館まで、どう行ったらいいですか。", "back": "Ninja-Hakubutsukan made, doo ittara ii desu ka.<br>닌자박물관까지 어떻게 가면 돼요？", "isCloze": false}
+  ]
+}

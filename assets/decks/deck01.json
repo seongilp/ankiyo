@@ -1,0 +1,33 @@
+{
+  "name": "일본말 첫걸음 1~4과",
+  "cards": [
+    {"front": "すみません", "back": "<b>すみません</b> · sumimasen<br>저기요！", "isCloze": false},
+    {"front": "どこ", "back": "<b>どこ</b> · doko<br>어디", "isCloze": false},
+    {"front": "ぼくたち", "back": "<b>ぼくたち</b> · bokutachi<br>우리", "isCloze": false},
+    {"front": "うち", "back": "<b>うち</b> · uchi<br>집", "isCloze": false},
+    {"front": "すぐ近く", "back": "<b>すぐちかく</b> · sugu chikaku<br>바로 근처", "isCloze": false},
+    {"front": "一緒に", "back": "<b>いっしょに</b> · issho ni<br>같이", "isCloze": false},
+    {"front": "行く", "back": "<b>いく</b> · iku<br>가다", "isCloze": false},
+    {"front": "こっち", "back": "<b>こっち</b> · kocchi<br>이쪽", "isCloze": false},
+    {"front": "はい", "back": "<b>はい</b> · hai<br>네", "isCloze": false},
+    {"front": "はるさんハウスはどこですか。", "back": "Haru-san-Hausu wa doko desu ka.<br>하루상하우스는 어디예요？", "isCloze": false},
+    {"front": "新しい", "back": "<b>あたらしい</b> · atarashii<br>새", "isCloze": false},
+    {"front": "住人", "back": "<b>じゅうにん</b> · juunin<br>입주자", "isCloze": false},
+    {"front": "着く", "back": "<b>つく</b> · tsuku<br>도착하다", "isCloze": false},
+    {"front": "ロボット", "back": "<b>ロボット</b> · robotto<br>로봇", "isCloze": false},
+    {"front": "大家", "back": "<b>おおや</b> · ooya<br>집주인", "isCloze": false},
+    {"front": "学生", "back": "<b>がくせい</b> · gakusee<br>학생", "isCloze": false},
+    {"front": "タムです。学生です。", "back": "Tamu desu. Gakusee desu.<br>탐이에요. 학생이에요.", "isCloze": false},
+    {"front": "たくさん", "back": "<b>たくさん</b> · takusan<br>많이", "isCloze": false},
+    {"front": "食べる", "back": "<b>たべる</b> · taberu<br>먹다", "isCloze": false},
+    {"front": "来る", "back": "<b>くる</b> · kuru<br>오다", "isCloze": false},
+    {"front": "写真家", "back": "<b>しゃしんか</b> · shashinka<br>사진작가", "isCloze": false},
+    {"front": "ぼく", "back": "<b>ぼく</b> · boku<br>나", "isCloze": false},
+    {"front": "知っている", "back": "<b>しっている</b> · shitte iru<br>알고 있다", "isCloze": false},
+    {"front": "ベトナムから来ました。", "back": "Betonamu kara kimashita.<br>베트남에서 왔어요.", "isCloze": false},
+    {"front": "大学", "back": "<b>だいがく</b> · daigaku<br>대학교", "isCloze": false},
+    {"front": "日本語", "back": "<b>にほんご</b> · Nihongo<br>일본어", "isCloze": false},
+    {"front": "勉強する", "back": "<b>べんきょうする</b> · benkyoo-suru<br>공부하다", "isCloze": false},
+    {"front": "大学で日本語を勉強します。", "back": "Daigaku de Nihongo o benkyoo-shimasu.<br>대학교에서 일본어를 공부해요.", "isCloze": false}
+  ]
+}

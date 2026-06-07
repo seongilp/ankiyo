@@ -1,0 +1,625 @@
+{
+  "name": "히라가나 (글자·단어·예문)",
+  "cards": [
+    {
+      "front": "あ",
+      "back": "<b>a</b> · 아<br>예: あめ (ame) — 비, 사탕",
+      "isCloze": false
+    },
+    {
+      "front": "い",
+      "back": "<b>i</b> · 이<br>예: いぬ (inu) — 개",
+      "isCloze": false
+    },
+    {
+      "front": "う",
+      "back": "<b>u</b> · 우<br>예: うみ (umi) — 바다",
+      "isCloze": false
+    },
+    {
+      "front": "え",
+      "back": "<b>e</b> · 에<br>예: えき (eki) — 역",
+      "isCloze": false
+    },
+    {
+      "front": "お",
+      "back": "<b>o</b> · 오<br>예: おちゃ (ocha) — 차(녹차)",
+      "isCloze": false
+    },
+    {
+      "front": "か",
+      "back": "<b>ka</b> · 카(가)<br>예: かに (kani) — 게",
+      "isCloze": false
+    },
+    {
+      "front": "き",
+      "back": "<b>ki</b> · 키(기)<br>예: きく (kiku) — 듣다",
+      "isCloze": false
+    },
+    {
+      "front": "く",
+      "back": "<b>ku</b> · 쿠(구)<br>예: くち (kuchi) — 입",
+      "isCloze": false
+    },
+    {
+      "front": "け",
+      "back": "<b>ke</b> · 케(게)<br>예: けさ (kesa) — 오늘 아침",
+      "isCloze": false
+    },
+    {
+      "front": "こ",
+      "back": "<b>ko</b> · 코(고)<br>예: こども (kodomo) — 아이",
+      "isCloze": false
+    },
+    {
+      "front": "さ",
+      "back": "<b>sa</b> · 사<br>예: さかな (sakana) — 생선",
+      "isCloze": false
+    },
+    {
+      "front": "し",
+      "back": "<b>shi</b> · 시<br>예: しお (shio) — 소금",
+      "isCloze": false
+    },
+    {
+      "front": "す",
+      "back": "<b>su</b> · 스<br>예: すいか (suika) — 수박",
+      "isCloze": false
+    },
+    {
+      "front": "せ",
+      "back": "<b>se</b> · 세<br>예: せかい (sekai) — 세계",
+      "isCloze": false
+    },
+    {
+      "front": "そ",
+      "back": "<b>so</b> · 소<br>예: そら (sora) — 하늘",
+      "isCloze": false
+    },
+    {
+      "front": "た",
+      "back": "<b>ta</b> · 타(다)<br>예: たまご (tamago) — 달걀",
+      "isCloze": false
+    },
+    {
+      "front": "ち",
+      "back": "<b>chi</b> · 치(지)<br>예: ちず (chizu) — 지도",
+      "isCloze": false
+    },
+    {
+      "front": "つ",
+      "back": "<b>tsu</b> · 츠<br>예: つき (tsuki) — 달",
+      "isCloze": false
+    },
+    {
+      "front": "て",
+      "back": "<b>te</b> · 테(데)<br>예: てがみ (tegami) — 편지",
+      "isCloze": false
+    },
+    {
+      "front": "と",
+      "back": "<b>to</b> · 토(도)<br>예: とり (tori) — 새",
+      "isCloze": false
+    },
+    {
+      "front": "な",
+      "back": "<b>na</b> · 나<br>예: なつ (natsu) — 여름",
+      "isCloze": false
+    },
+    {
+      "front": "に",
+      "back": "<b>ni</b> · 니<br>예: にく (niku) — 고기",
+      "isCloze": false
+    },
+    {
+      "front": "ぬ",
+      "back": "<b>nu</b> · 누<br>예: ぬの (nuno) — 천",
+      "isCloze": false
+    },
+    {
+      "front": "ね",
+      "back": "<b>ne</b> · 네<br>예: ねこ (neko) — 고양이",
+      "isCloze": false
+    },
+    {
+      "front": "の",
+      "back": "<b>no</b> · 노<br>예: のり (nori) — 김",
+      "isCloze": false
+    },
+    {
+      "front": "は",
+      "back": "<b>ha</b> · 하<br>예: はな (hana) — 꽃",
+      "isCloze": false
+    },
+    {
+      "front": "ひ",
+      "back": "<b>hi</b> · 히<br>예: ひと (hito) — 사람",
+      "isCloze": false
+    },
+    {
+      "front": "ふ",
+      "back": "<b>fu</b> · 후<br>예: ふね (fune) — 배(船)",
+      "isCloze": false
+    },
+    {
+      "front": "へ",
+      "back": "<b>he</b> · 헤<br>예: へや (heya) — 방",
+      "isCloze": false
+    },
+    {
+      "front": "ほ",
+      "back": "<b>ho</b> · 호<br>예: ほし (hoshi) — 별",
+      "isCloze": false
+    },
+    {
+      "front": "ま",
+      "back": "<b>ma</b> · 마<br>예: まど (mado) — 창문",
+      "isCloze": false
+    },
+    {
+      "front": "み",
+      "back": "<b>mi</b> · 미<br>예: みず (mizu) — 물",
+      "isCloze": false
+    },
+    {
+      "front": "む",
+      "back": "<b>mu</b> · 무<br>예: むし (mushi) — 벌레",
+      "isCloze": false
+    },
+    {
+      "front": "め",
+      "back": "<b>me</b> · 메<br>예: めがね (megane) — 안경",
+      "isCloze": false
+    },
+    {
+      "front": "も",
+      "back": "<b>mo</b> · 모<br>예: もも (momo) — 복숭아",
+      "isCloze": false
+    },
+    {
+      "front": "や",
+      "back": "<b>ya</b> · 야<br>예: やま (yama) — 산",
+      "isCloze": false
+    },
+    {
+      "front": "ゆ",
+      "back": "<b>yu</b> · 유<br>예: ゆき (yuki) — 눈(雪)",
+      "isCloze": false
+    },
+    {
+      "front": "よ",
+      "back": "<b>yo</b> · 요<br>예: よる (yoru) — 밤",
+      "isCloze": false
+    },
+    {
+      "front": "ら",
+      "back": "<b>ra</b> · 라<br>예: らくだ (rakuda) — 낙타",
+      "isCloze": false
+    },
+    {
+      "front": "り",
+      "back": "<b>ri</b> · 리<br>예: りんご (ringo) — 사과",
+      "isCloze": false
+    },
+    {
+      "front": "る",
+      "back": "<b>ru</b> · 루<br>예: くるま (kuruma) — 자동차",
+      "isCloze": false
+    },
+    {
+      "front": "れ",
+      "back": "<b>re</b> · 레<br>예: これ (kore) — 이것",
+      "isCloze": false
+    },
+    {
+      "front": "ろ",
+      "back": "<b>ro</b> · 로<br>예: ろく (roku) — 육(6)",
+      "isCloze": false
+    },
+    {
+      "front": "わ",
+      "back": "<b>wa</b> · 와<br>예: わたし (watashi) — 나",
+      "isCloze": false
+    },
+    {
+      "front": "を",
+      "back": "<b>o</b> · 오 (목적격 조사 '을/를')<br>예: ほんをよむ (hon o yomu) — 책을 읽다",
+      "isCloze": false
+    },
+    {
+      "front": "ん",
+      "back": "<b>n</b> · 받침 ㄴ/ㅁ/ㅇ<br>예: ほん (hon) — 책",
+      "isCloze": false
+    },
+    {
+      "front": "が",
+      "back": "<b>ga</b> · 가<br>예: かがみ (kagami) — 거울",
+      "isCloze": false
+    },
+    {
+      "front": "ぎ",
+      "back": "<b>gi</b> · 기<br>예: かぎ (kagi) — 열쇠",
+      "isCloze": false
+    },
+    {
+      "front": "ぐ",
+      "back": "<b>gu</b> · 구<br>예: かぐ (kagu) — 가구",
+      "isCloze": false
+    },
+    {
+      "front": "げ",
+      "back": "<b>ge</b> · 게<br>예: げんき (genki) — 건강함",
+      "isCloze": false
+    },
+    {
+      "front": "ご",
+      "back": "<b>go</b> · 고<br>예: ごはん (gohan) — 밥",
+      "isCloze": false
+    },
+    {
+      "front": "ざ",
+      "back": "<b>za</b> · 자<br>예: ひざ (hiza) — 무릎",
+      "isCloze": false
+    },
+    {
+      "front": "じ",
+      "back": "<b>ji</b> · 지<br>예: じかん (jikan) — 시간",
+      "isCloze": false
+    },
+    {
+      "front": "ず",
+      "back": "<b>zu</b> · 즈<br>예: ちず (chizu) — 지도",
+      "isCloze": false
+    },
+    {
+      "front": "ぜ",
+      "back": "<b>ze</b> · 제<br>예: かぜ (kaze) — 바람, 감기",
+      "isCloze": false
+    },
+    {
+      "front": "ぞ",
+      "back": "<b>zo</b> · 조<br>예: ぞう (zoo) — 코끼리",
+      "isCloze": false
+    },
+    {
+      "front": "だ",
+      "back": "<b>da</b> · 다<br>예: からだ (karada) — 몸",
+      "isCloze": false
+    },
+    {
+      "front": "ぢ",
+      "back": "<b>ji</b> · 지 (희귀)<br>예: はなぢ (hanaji) — 코피",
+      "isCloze": false
+    },
+    {
+      "front": "づ",
+      "back": "<b>zu</b> · 즈 (희귀)<br>예: つづき (tsuzuki) — 계속",
+      "isCloze": false
+    },
+    {
+      "front": "で",
+      "back": "<b>de</b> · 데<br>예: でんわ (denwa) — 전화",
+      "isCloze": false
+    },
+    {
+      "front": "ど",
+      "back": "<b>do</b> · 도<br>예: まど (mado) — 창문",
+      "isCloze": false
+    },
+    {
+      "front": "ば",
+      "back": "<b>ba</b> · 바<br>예: ことば (kotoba) — 말, 단어",
+      "isCloze": false
+    },
+    {
+      "front": "び",
+      "back": "<b>bi</b> · 비<br>예: へび (hebi) — 뱀",
+      "isCloze": false
+    },
+    {
+      "front": "ぶ",
+      "back": "<b>bu</b> · 부<br>예: ぶた (buta) — 돼지",
+      "isCloze": false
+    },
+    {
+      "front": "べ",
+      "back": "<b>be</b> · 베<br>예: べんとう (bentoo) — 도시락",
+      "isCloze": false
+    },
+    {
+      "front": "ぼ",
+      "back": "<b>bo</b> · 보<br>예: ぼうし (booshi) — 모자",
+      "isCloze": false
+    },
+    {
+      "front": "ぱ",
+      "back": "<b>pa</b> · 파<br>예: かんぱい (kanpai) — 건배",
+      "isCloze": false
+    },
+    {
+      "front": "ぴ",
+      "back": "<b>pi</b> · 피<br>예: えんぴつ (enpitsu) — 연필",
+      "isCloze": false
+    },
+    {
+      "front": "ぷ",
+      "back": "<b>pu</b> · 푸<br>예: てんぷら (tenpura) — 튀김",
+      "isCloze": false
+    },
+    {
+      "front": "ぺ",
+      "back": "<b>pe</b> · 페<br>예: ぺこぺこ (pekopeko) — 배고픔",
+      "isCloze": false
+    },
+    {
+      "front": "ぽ",
+      "back": "<b>po</b> · 포<br>예: さんぽ (sanpo) — 산책",
+      "isCloze": false
+    },
+    {
+      "front": "きゃ",
+      "back": "<b>kya</b> · 캬<br>예: きゃく (kyaku) — 손님",
+      "isCloze": false
+    },
+    {
+      "front": "きゅ",
+      "back": "<b>kyu</b> · 큐<br>예: きゅう (kyuu) — 9, 구",
+      "isCloze": false
+    },
+    {
+      "front": "きょ",
+      "back": "<b>kyo</b> · 쿄<br>예: きょう (kyoo) — 오늘",
+      "isCloze": false
+    },
+    {
+      "front": "しゃ",
+      "back": "<b>sha</b> · 샤<br>예: しゃしん (shashin) — 사진",
+      "isCloze": false
+    },
+    {
+      "front": "しゅ",
+      "back": "<b>shu</b> · 슈<br>예: しゅくだい (shukudai) — 숙제",
+      "isCloze": false
+    },
+    {
+      "front": "しょ",
+      "back": "<b>sho</b> · 쇼<br>예: しょくじ (shokuji) — 식사",
+      "isCloze": false
+    },
+    {
+      "front": "ちゃ",
+      "back": "<b>cha</b> · 챠<br>예: おちゃ (ocha) — 차(녹차)",
+      "isCloze": false
+    },
+    {
+      "front": "ちゅ",
+      "back": "<b>chu</b> · 츄<br>예: ちゅうい (chuui) — 주의",
+      "isCloze": false
+    },
+    {
+      "front": "ちょ",
+      "back": "<b>cho</b> · 쵸<br>예: ちょっと (chotto) — 조금, 잠깐",
+      "isCloze": false
+    },
+    {
+      "front": "にゃ",
+      "back": "<b>nya</b> · 냐<br>예: こんにゃく (konnyaku) — 곤약",
+      "isCloze": false
+    },
+    {
+      "front": "にゅ",
+      "back": "<b>nyu</b> · 뉴<br>예: ぎゅうにゅう (gyuunyuu) — 우유",
+      "isCloze": false
+    },
+    {
+      "front": "にょ",
+      "back": "<b>nyo</b> · 뇨",
+      "isCloze": false
+    },
+    {
+      "front": "ひゃ",
+      "back": "<b>hya</b> · 햐<br>예: ひゃく (hyaku) — 100, 백",
+      "isCloze": false
+    },
+    {
+      "front": "ひゅ",
+      "back": "<b>hyu</b> · 휴",
+      "isCloze": false
+    },
+    {
+      "front": "ひょ",
+      "back": "<b>hyo</b> · 효<br>예: ひょう (hyoo) — 표(表)",
+      "isCloze": false
+    },
+    {
+      "front": "みゃ",
+      "back": "<b>mya</b> · 먀",
+      "isCloze": false
+    },
+    {
+      "front": "みゅ",
+      "back": "<b>myu</b> · 뮤",
+      "isCloze": false
+    },
+    {
+      "front": "みょ",
+      "back": "<b>myo</b> · 묘",
+      "isCloze": false
+    },
+    {
+      "front": "りゃ",
+      "back": "<b>rya</b> · 랴",
+      "isCloze": false
+    },
+    {
+      "front": "りゅ",
+      "back": "<b>ryu</b> · 류<br>예: りゅう (ryuu) — 용(龍)",
+      "isCloze": false
+    },
+    {
+      "front": "りょ",
+      "back": "<b>ryo</b> · 료<br>예: りょこう (ryokoo) — 여행",
+      "isCloze": false
+    },
+    {
+      "front": "ぎゃ",
+      "back": "<b>gya</b> · 갸<br>예: ぎゃく (gyaku) — 반대, 거꾸로",
+      "isCloze": false
+    },
+    {
+      "front": "ぎゅ",
+      "back": "<b>gyu</b> · 규<br>예: ぎゅうにゅう (gyuunyuu) — 우유",
+      "isCloze": false
+    },
+    {
+      "front": "ぎょ",
+      "back": "<b>gyo</b> · 교<br>예: きんぎょ (kingyo) — 금붕어",
+      "isCloze": false
+    },
+    {
+      "front": "じゃ",
+      "back": "<b>ja</b> · 쟈<br>예: じゃあ (jaa) — 그럼",
+      "isCloze": false
+    },
+    {
+      "front": "じゅ",
+      "back": "<b>ju</b> · 쥬<br>예: じゅう (juu) — 10, 십",
+      "isCloze": false
+    },
+    {
+      "front": "じょ",
+      "back": "<b>jo</b> · 죠<br>예: じょうず (joozu) — 잘함, 능숙함",
+      "isCloze": false
+    },
+    {
+      "front": "びゃ",
+      "back": "<b>bya</b> · 뱌",
+      "isCloze": false
+    },
+    {
+      "front": "びゅ",
+      "back": "<b>byu</b> · 뷰",
+      "isCloze": false
+    },
+    {
+      "front": "びょ",
+      "back": "<b>byo</b> · 뵤<br>예: びょういん (byooin) — 병원",
+      "isCloze": false
+    },
+    {
+      "front": "ぴゃ",
+      "back": "<b>pya</b> · 퍄",
+      "isCloze": false
+    },
+    {
+      "front": "ぴゅ",
+      "back": "<b>pyu</b> · 퓨",
+      "isCloze": false
+    },
+    {
+      "front": "ぴょ",
+      "back": "<b>pyo</b> · 표<br>예: はっぴょう (happyoo) — 발표",
+      "isCloze": false
+    },
+    {
+      "front": "こんにちは",
+      "back": "konnichiwa<br>안녕하세요 (낮)",
+      "isCloze": false
+    },
+    {
+      "front": "こんばんは",
+      "back": "konbanwa<br>안녕하세요 (저녁)",
+      "isCloze": false
+    },
+    {
+      "front": "ありがとう",
+      "back": "arigatoo<br>고맙습니다",
+      "isCloze": false
+    },
+    {
+      "front": "すみません",
+      "back": "sumimasen<br>죄송합니다, 저기요",
+      "isCloze": false
+    },
+    {
+      "front": "さようなら",
+      "back": "sayoonara<br>안녕히 가세요",
+      "isCloze": false
+    },
+    {
+      "front": "ともだち",
+      "back": "tomodachi<br>친구",
+      "isCloze": false
+    },
+    {
+      "front": "せんせい",
+      "back": "sensee<br>선생님",
+      "isCloze": false
+    },
+    {
+      "front": "がっこう",
+      "back": "gakkoo<br>학교",
+      "isCloze": false
+    },
+    {
+      "front": "たべもの",
+      "back": "tabemono<br>음식",
+      "isCloze": false
+    },
+    {
+      "front": "のみもの",
+      "back": "nomimono<br>음료",
+      "isCloze": false
+    },
+    {
+      "front": "くだもの",
+      "back": "kudamono<br>과일",
+      "isCloze": false
+    },
+    {
+      "front": "おいしい",
+      "back": "oishii<br>맛있다",
+      "isCloze": false
+    },
+    {
+      "front": "わたしは がくせいです。",
+      "back": "watashi wa gakusee desu.<br>저는 학생이에요.",
+      "isCloze": false
+    },
+    {
+      "front": "これは なんですか。",
+      "back": "kore wa nan desu ka.<br>이것은 무엇입니까?",
+      "isCloze": false
+    },
+    {
+      "front": "おなまえは なんですか。",
+      "back": "onamae wa nan desu ka.<br>이름이 뭐예요?",
+      "isCloze": false
+    },
+    {
+      "front": "すみません、えきは どこですか。",
+      "back": "sumimasen, eki wa doko desu ka.<br>저기요, 역은 어디예요?",
+      "isCloze": false
+    },
+    {
+      "front": "にほんごを べんきょうします。",
+      "back": "nihongo o benkyoo shimasu.<br>일본어를 공부해요.",
+      "isCloze": false
+    },
+    {
+      "front": "いただきます。",
+      "back": "itadakimasu.<br>잘 먹겠습니다.",
+      "isCloze": false
+    },
+    {
+      "front": "ごちそうさまでした。",
+      "back": "gochisoosama deshita.<br>잘 먹었습니다.",
+      "isCloze": false
+    },
+    {
+      "front": "おはようございます。",
+      "back": "ohayoo gozaimasu.<br>좋은 아침입니다.",
+      "isCloze": false
+    }
+  ]
+}
